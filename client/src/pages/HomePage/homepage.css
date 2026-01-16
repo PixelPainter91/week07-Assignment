@@ -1,0 +1,34 @@
+.homepage {
+    max-width: 600px;
+    margin: 80px auto 0 auto;
+     padding: 20px;
+     font-family: Arial, sans-serif;
+}
+
+.search-bar {
+        margin-bottom: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.feed .post {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-color: #fafafa;
+}
+
+.feed .post h4 {
+    margin: 0 0 5px 0;
+}
+
+.feed .post p {
+    margin: 0;
+}

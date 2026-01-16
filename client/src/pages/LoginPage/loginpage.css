@@ -1,0 +1,21 @@
+.login-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 250px;
+}
+
+.login-container input,
+.login-container button {
+  padding: 0.75rem;
+  font-size: 1rem;
+}
