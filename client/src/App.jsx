@@ -1,24 +1,28 @@
+import { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import Login from "./pages/LoginPage/LoginPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
 import HomePage from "./pages/HomePage/HomePage.jsx";
-
-
+import AboutPage from "./pages/AboutPage/AboutPage.jsx";
 
 export default function App() {
-  const isLoggedIn = localStorage.getItem("username");
+  const [isLoggedIn, setIsLoggedIn] = useState(() => {
+    return !!localStorage.getItem("token");
+  });
 
   return (
     <Routes>
-     
-      <Route path="/" element={<Login />} />
-
-      
       <Route
-  path="/home"
-  element={isLoggedIn ? <HomePage /> : <Navigate to="/" />}
-/>
-
-
+        path="/"
+        element={<LoginPage setIsLoggedIn={setIsLoggedIn} />}
+      />
+      <Route
+        path="/home"
+        element={isLoggedIn ? <HomePage /> : <Navigate to="/" />}
+      />
+      <Route
+        path="/about"
+        element={isLoggedIn ? <AboutPage /> : <Navigate to="/" />}
+      />
     </Routes>
   );
 }

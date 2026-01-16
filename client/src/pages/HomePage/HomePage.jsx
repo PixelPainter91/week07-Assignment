@@ -3,7 +3,7 @@ import "./homepage.css";
 import Navbar from "../../components/Navbar/Navbar";
 
 export default function HomePage() {
-  // Mock posts data --need to add setPosts
+  // Mock posts data --
   const [posts] = useState([
     { id: 1, user: "Alice", content: "Just climbed a mountain!" },
     { id: 2, user: "Bob", content: "Kayaking adventures today " },
@@ -12,7 +12,7 @@ export default function HomePage() {
 
   const [search, setSearch] = useState("");
 
-  // Filter posts by search
+
   const filteredPosts = posts.filter(
     (post) =>
       post.user.toLowerCase().includes(search.toLowerCase()) ||

@@ -20,13 +20,16 @@ export default function Navbar() {
         </li>
 
         <li className="nav-item">
-          <button aria-expanded="false">Apps</button>
+          <button aria-expanded="false">My Profile</button>
           <ul className="sub-menu" aria-label="Apps">
             <li><a href="#">Chat</a></li>
-            <li><a href="#">Email</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">Settings</a></li>
+            
           </ul>
         </li>
-        <li><img className="nav-avatar" src="./public/assets/useravatar.png"/>
+        <li><img className="nav-avatar" src="./public/assets/profileavatar.png"/>
         </li>
       </ul>
     </nav>
