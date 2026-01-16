@@ -46,7 +46,7 @@ export default function AboutPage() {
       </div>
 
       <div className="text-container">
-        <h2>About Me</h2>
+        <h2>About Wonder</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
           tincidunt justo eget ultricies fringilla. Phasellus blandit ipsum

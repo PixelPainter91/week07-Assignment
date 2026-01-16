@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import HomePage from "./pages/HomePage/HomePage.jsx";
 import AboutPage from "./pages/AboutPage/AboutPage.jsx";
+import MyPage from "./pages/MyPage/MyPage.jsx";
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
@@ -23,6 +24,9 @@ export default function App() {
         path="/about"
         element={isLoggedIn ? <AboutPage /> : <Navigate to="/" />}
       />
+      <Route
+      path="/mypage"
+      element={isLoggedIn ? <MyPage /> : <Navigate to="/" />}/>
     </Routes>
   );
 }

@@ -4,13 +4,16 @@ import dotenv from "dotenv";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { db } from "./dbConnections.js";
+import mypageRoutes from "./mypage.js";
+
+
 
 dotenv.config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
-
+app.use("/api", mypageRoutes);
 app.post("/signup", async (req, res) => {
   const { username, password } = req.body;
 
@@ -33,7 +36,6 @@ app.post("/signup", async (req, res) => {
   }
 });
 
-// Login route
 app.post("/login", async (req, res) => {
   const { username, password } = req.body;
 
@@ -56,9 +58,11 @@ app.post("/login", async (req, res) => {
     if (!match)
       return res.status(401).json({ error: "Invalid credentials" });
 
+    
     const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET);
 
-    res.json({ token });
+   
+    res.json({ token, userId: user.id });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Server error" });

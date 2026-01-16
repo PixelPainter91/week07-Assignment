@@ -20,6 +20,7 @@ export default function LoginPage({ setIsLoggedIn }) {
 
       if (res.ok && data.token) {
         localStorage.setItem("token", data.token);
+        localStorage.setItem("userId", data.userId);
         setIsLoggedIn(true);
         navigate("/home");
       } else {

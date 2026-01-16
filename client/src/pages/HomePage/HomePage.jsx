@@ -5,9 +5,9 @@ import Navbar from "../../components/Navbar/Navbar";
 export default function HomePage() {
   // Mock posts data --
   const [posts] = useState([
-    { id: 1, user: "Alice", content: "Just climbed a mountain!" },
-    { id: 2, user: "Bob", content: "Kayaking adventures today " },
-    { id: 3, user: "Charlie", content: "Sunset hike was amazing" },
+    { id: 1, user: "Alice", content: "Just climbed a mountain! See mypage:fnae" },
+    { id: 2, user: "CurrentuserMockpost", content: "Kayaking adventures today " },
+    { id: 3, user: "Charlie", content: "Sunset hike was amazing! See mypage:fnae" },
   ]);
 
   const [search, setSearch] = useState("");
