@@ -3,6 +3,9 @@ add email to login
 add password reset
 add link to form or popupform to SIGN UP
 add option for addional pages to MyPage --> update database to hold number of pages and saves for different pages
+add a way to name MyPage pages
+add drawing/colouring tools to MyPage
+
 
 
 Reflection
