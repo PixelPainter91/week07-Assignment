@@ -20,7 +20,7 @@ export default function HomePage() {
       id: 2,
       user: "Current user Mockpost",
       content: "Me in Coba Maya",
-      Pic: "/public/aboutimages/mecobamaya.jpg",
+      Pic: "/aboutimages/mecobamaya.jpg",
       mypageLink: "/mypage",
     },
     {

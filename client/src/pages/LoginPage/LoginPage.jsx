@@ -54,7 +54,7 @@ export default function LoginPage({ setIsLoggedIn }) {
 
   return (
     <div className="login-container">
-      <img className="login-img" src="/public/assets/dariusz-sankowski-3OiYMgDKJ6k-unsplash.jpg" alt="Travel items including map, camera, photos, magnifying glass, and scrapbook on a table."/>
+      <img className="login-img" src="/assets/dariusz-sankowski-3OiYMgDKJ6k-unsplash.jpg" alt="Travel items including map, camera, photos, magnifying glass, and scrapbook on a table."/>
       <h1>Wonder</h1>
       <p>The Adventurers Scrapbook</p>
 
