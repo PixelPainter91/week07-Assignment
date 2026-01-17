@@ -10,7 +10,7 @@ export default function LoginPage({ setIsLoggedIn }) {
 
   const login = async () => {
     try {
-      const res = await fetch("http://localhost:3000/login", {
+      const res = await fetch("https://week07-assignment-server-kxd3.onrender.com/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
@@ -34,7 +34,7 @@ export default function LoginPage({ setIsLoggedIn }) {
 
   const signup = async () => {
     try {
-      const res = await fetch("http://localhost:3000/signup", {
+      const res = await fetch("https://week07-assignment-server-kxd3.onrender.com/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),

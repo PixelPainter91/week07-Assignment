@@ -6,14 +6,27 @@ import jwt from "jsonwebtoken";
 import { db } from "./dbConnections.js";
 import mypageRoutes from "./mypage.js";
 
-
-
 dotenv.config();
 
 const app = express();
-app.use(cors());
+
+
+app.use(cors({
+  origin: process.env.CLIENT_URL || "*",
+  credentials: true
+}));
+
 app.use(express.json());
+
+
+app.get("/", (req, res) => {
+  res.status(200).json({ status: "API running" });
+});
+
 app.use("/api", mypageRoutes);
+
+
+
 app.post("/signup", async (req, res) => {
   const { username, password } = req.body;
 
@@ -49,25 +62,30 @@ app.post("/login", async (req, res) => {
       [username]
     );
 
-    if (result.rows.length === 0)
+    if (!result.rows.length) {
       return res.status(401).json({ error: "Invalid credentials" });
+    }
 
     const user = result.rows[0];
     const match = await bcrypt.compare(password, user.password_hash);
 
-    if (!match)
+    if (!match) {
       return res.status(401).json({ error: "Invalid credentials" });
+    }
 
-    
-    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET);
+    const token = jwt.sign(
+      { id: user.id },
+      process.env.JWT_SECRET,
+      { expiresIn: "1d" }
+    );
 
-   
     res.json({ token, userId: user.id });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Server error" });
   }
 });
+
 
 app.get("/protected", (req, res) => {
   const token = req.headers.authorization?.split(" ")[1];
@@ -81,4 +99,9 @@ app.get("/protected", (req, res) => {
   }
 });
 
-app.listen(3000, () => console.log("Server running on port 3000"));
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on port ${PORT}`);
+});
