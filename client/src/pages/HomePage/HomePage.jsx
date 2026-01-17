@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./homepage.css";
 import Navbar from "../../components/Navbar/Navbar";
+import { Link } from "react-router-dom";
+
 
 export default function HomePage() {
   
@@ -67,9 +69,10 @@ export default function HomePage() {
                 </div>
                 <p>{post.content}</p>
                 {post.mypageLink && (
-                  <a href={post.mypageLink} className="mypage-link">
-                    View MyPage
-                  </a>
+                  <Link to={post.mypageLink} className="mypage-link">
+  View MyPage
+</Link>
+
                 )}
               </div>
             ))
