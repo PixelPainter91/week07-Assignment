@@ -63,7 +63,8 @@ export default function LoginPage({ setIsLoggedIn }) {
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       /> 
-      {/* maybe update for emails at a later date no email addresses for MVP */}
+      {/* maybe update for emails at a later date no email addresses for MVP 
+      add - and a password reset!*/}
 
       <input
         type="password"

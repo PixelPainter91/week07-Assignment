@@ -9,11 +9,13 @@
   z-index: 1000;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
-
-
-
+.logo {
+  color: #000000;
+  font-weight: bold;
+  margin: 0;
+}
 .navbar ul {
   list-style: none;
   margin: 0;
@@ -42,29 +44,27 @@
 }
 
 .navbar .nav-item {
-  position: relative; 
+  position: relative;
 }
 
 .navbar .sub-menu {
   display: none;
   position: absolute;
-  top: 100%; 
-  left: 0;   
+  top: 100%;
+  left: 0;
   background-color: #1f2937;
   padding: 0.5rem 0;
   list-style: none;
   min-width: 150px;
   border-radius: 0.25rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
   z-index: 1000;
-  transition: opacity 0.2s ease;
 }
 
 .navbar .nav-item:hover .sub-menu,
 .navbar .nav-item:focus-within .sub-menu {
   display: block;
 }
-
 
 .navbar .sub-menu li a {
   display: block;
@@ -76,6 +76,8 @@
   background-color: #374151;
 }
 
+
+
 .nav-avatar {
   width: 40px;
   height: 40px;
@@ -85,6 +87,70 @@
   cursor: pointer;
 }
 
+
+
+.chat-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.chat-modal {
+  background-color: #ffffff;
+  width: 90%;
+  max-width: 420px;
+  padding: 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.chat-modal h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.chat-modal textarea {
+  width: 95%;
+  resize: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.chat-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.chat-actions button {
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.chat-actions .cancel {
+  background-color: #9ca3af;
+  color: #fff;
+}
+
+.chat-actions .send {
+  background-color: #61bd81;
+  color: #fff;
+}
+
+.chat-actions .send:hover {
+  opacity: 0.9;
+}
 
 
 @media (max-width: 768px) {
